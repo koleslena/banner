@@ -8,3 +8,6 @@ So, services:
 /banner/{id}
 /banner/next/{id}
 /banner/save/{name, ref, content}
+
+
+./gradlew test for tests
