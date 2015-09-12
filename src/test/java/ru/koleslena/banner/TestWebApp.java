@@ -46,7 +46,7 @@ public class TestWebApp {
     @Test
     public void validateGetBanner() throws Exception {
 
-        mockMvc.perform(get("/banner/{id}", 1L))
+        mockMvc.perform(get("/banner/{id}", 1000001L))
                 .andExpect(status().isOk())
                 .andExpect(
                         content().contentType(JSON_UTF_8))
@@ -57,7 +57,7 @@ public class TestWebApp {
     @Test
     public void validateGetNextBanner() throws Exception {
 
-        mockMvc.perform(get("/banner/next/{id}", 1L))
+        mockMvc.perform(get("/banner/next/{id}", 1000001L))
                 .andExpect(status().isOk())
                 .andExpect(
                         content().contentType(JSON_UTF_8))

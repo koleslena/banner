@@ -41,18 +41,16 @@ public class BannerServiceTest {
 
         when(randomServiceMock.getRandomIntLessThanMax(98)).thenReturn(expectedValue);
 
-        Banner next = bannersHolder.getNext(1L);
+        Banner next = bannersHolder.getNext(1000001L);
 
         Assert.notNull(next);
-        Assert.isTrue(next.getId().equals(new Long(expectedValue + 2)));
+        Assert.isTrue(next.getId().equals(new Long(expectedValue + 1000002L)));
         Assert.isTrue(next.getName().equals(String.format(format, expectedValue + 2)));
 
-        when(randomServiceMock.getRandomIntLessThanMax(98)).thenReturn(expectedValue);
-
-        next = bannersHolder.getNext(50L);
+        next = bannersHolder.getNext(1000050L);
 
         Assert.notNull(next);
-        Assert.isTrue(next.getId().equals(new Long(expectedValue + 1)));
+        Assert.isTrue(next.getId().equals(new Long(expectedValue + 1000001L)));
         Assert.isTrue(next.getName().equals(String.format(format, expectedValue + 1)));
     }
 }
