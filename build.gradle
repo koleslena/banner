@@ -61,6 +61,10 @@ gretty {
   servletContainer = 'jetty9' //tomcat7 or tomcat8
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
+
 task sqlGenerate(type: JavaExec, dependsOn: build) {
 
     main = "ru.koleslena.demo.generate.SqlGenerator"
